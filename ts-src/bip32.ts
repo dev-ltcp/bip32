@@ -26,14 +26,14 @@ const NETWORK_TYPE = typeforce.compile({
 });
 
 const BITCOIN: Network = {
-  messagePrefix: '\x18Bitcoin Signed Message:\n',
-  bech32: 'bc',
+  messagePrefix: '\x18Litecoin PoS Signed Message:\n',
+  bech32: 'lp',
   bip32: {
-    public: 0x0488b21e,
-    private: 0x0488ade4,
+    public: 0x7788B21E,
+    private: 0x7788ADE4,
   },
-  pubKeyHash: 0x00,
-  scriptHash: 0x05,
+  pubKeyHash: 0x50,
+  scriptHash: 0x110,
   wif: 0x80,
 };
 
