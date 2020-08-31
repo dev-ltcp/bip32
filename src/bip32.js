@@ -20,8 +20,8 @@ const BITCOIN = {
         public: 0x7788B21E,
         private: 0x7788ADE4,
     },
-    pubKeyHash: 0x50,
-    scriptHash: 0x110,
+    pubKeyHash: 0x32,
+    scriptHash: 0x6e,
     wif: 0x80,
 };
 const HIGHEST_BIT = 0x80000000;
@@ -217,6 +217,10 @@ function fromBase58(inString, network) {
     network = network || BITCOIN;
     // 4 bytes: version bytes
     const version = buffer.readUInt32BE(0);
+    console.log(inString);
+    console.log(buffer);
+
+    console.log(version+" "+network.bip32.private +" "+ network.bip32.public);
     if (version !== network.bip32.private && version !== network.bip32.public)
         throw new TypeError('Invalid network version');
     // 1 byte: depth: 0x00 for master nodes, 0x01 for level-1 descendants, ...
